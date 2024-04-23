@@ -23,24 +23,24 @@ PySpark (3.5.1) - To Install: 'pip3 install pyspark=="3.5.1"'
 1) Open Mysql terminal and load the sql file to the database named "twitterDatabase", change the username and password in the kafka_producer.py file.
 2) Run the following commands-
    1) Terminal-1:
-   sudo systemctl start zookeeper
+      sudo systemctl start zookeeper
    
-   sudo systemctl start kafka
+      sudo systemctl start kafka
 
-   /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic tweets
+      /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic tweets
 
-   /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic hashtags
+      /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic hashtags
 
-   /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic top_tweets
+      /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic top_tweets
 
-   /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic top_hashtags
+      /path-of-kafka-bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic top_hashtags
 
-   /path-of-spark-sbin/start-all.sh
+      /path-of-spark-sbin/start-all.sh
 
-   python3 kafka_producer.py
+      python3 kafka_producer.py
 
    2) Terminal-2:
-   spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-streaming.py
+      spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-streaming.py
 
    3) Terminal-3:
-   spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-batch.py
+      spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-batch.py
