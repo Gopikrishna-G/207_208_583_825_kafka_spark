@@ -23,6 +23,7 @@ PySpark (3.5.1) - To Install: 'pip3 install pyspark=="3.5.1"'
 1) Open Mysql terminal and load the sql file to the database named "twitterDatabase", change the username and password in the kafka_producer.py file.
 2) Run the following commands-
    1) Terminal-1:
+      
       sudo systemctl start zookeeper
    
       sudo systemctl start kafka
@@ -40,7 +41,9 @@ PySpark (3.5.1) - To Install: 'pip3 install pyspark=="3.5.1"'
       python3 kafka_producer.py
 
    2) Terminal-2:
+      
       spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-streaming.py
 
    3) Terminal-3:
+      
       spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.3 spark_consumer-batch.py
